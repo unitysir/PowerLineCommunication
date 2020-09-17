@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj": {}
+  },
+  "projects": {
+    "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj",
+        "projectName": "DataParse",
+        "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj",
+        "packagesPath": "C:\\Users\\US\\.nuget\\packages\\",
+        "outputPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\US\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Npgsql": {
+              "target": "Package",
+              "version": "[4.1.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

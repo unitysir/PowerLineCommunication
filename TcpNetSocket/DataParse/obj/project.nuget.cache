@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "gFYhZ+RyTdqBq/IRUz+3dfTfOd51b0uUsKHguAC7ZnLtyLQhyT+l6jxyHSdfYQmZUdAGiiwvgqhzpKPmDjt5Ow==",
+  "success": true,
+  "projectFilePath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\US\\.nuget\\packages\\npgsql\\4.1.4\\npgsql.4.1.4.nupkg.sha512",
+    "C:\\Users\\US\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.6.0\\system.runtime.compilerservices.unsafe.4.6.0.nupkg.sha512"
+  ],
+  "logs": []
+}
