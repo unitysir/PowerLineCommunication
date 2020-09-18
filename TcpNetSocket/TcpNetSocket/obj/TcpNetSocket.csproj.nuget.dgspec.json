@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj": {}
+    "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj": {}
   },
   "projects": {
-    "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj": {
+    "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\DataParse.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj",
+        "projectUniqueName": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\DataParse.csproj",
         "projectName": "DataParse",
-        "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj",
+        "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\DataParse.csproj",
         "packagesPath": "C:\\Users\\US\\.nuget\\packages\\",
-        "outputPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\obj\\",
+        "outputPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\US\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -62,14 +62,14 @@
         }
       }
     },
-    "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj": {
+    "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
+        "projectUniqueName": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
         "projectName": "TcpNetSocket",
-        "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
+        "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
         "packagesPath": "C:\\Users\\US\\.nuget\\packages\\",
-        "outputPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\obj\\",
+        "outputPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\US\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -85,8 +85,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj": {
-                "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\DataParse\\DataParse.csproj"
+              "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\DataParse.csproj": {
+                "projectPath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\DataParse\\DataParse.csproj"
               }
             }
           }

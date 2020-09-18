@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+n3PGmikmEpyMaA8EFGIYK78zfl2ofK7kbCC9TEee59YM5eEkcE1qXS9ODemV6sUZjnNuoaKcGxO7RoOlaKG4A==",
+  "dgSpecHash": "91CYa8angmMjHbAkNphqcvB66aHCb2wk3cF1Jv/7S/FEB7ewacodBEy1jUXbI17jJP6MGVG4sLpmmJw8NiYZgg==",
   "success": true,
-  "projectFilePath": "D:\\zj_Programs\\C#file\\Console\\00Core\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
+  "projectFilePath": "D:\\zj_Programs\\C#file\\Console\\00Core\\PowerLineCommunication\\TcpNetSocket\\TcpNetSocket\\TcpNetSocket.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\US\\.nuget\\packages\\microsoft.extensions.configuration\\3.1.8\\microsoft.extensions.configuration.3.1.8.nupkg.sha512",
     "C:\\Users\\US\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\3.1.8\\microsoft.extensions.configuration.abstractions.3.1.8.nupkg.sha512",

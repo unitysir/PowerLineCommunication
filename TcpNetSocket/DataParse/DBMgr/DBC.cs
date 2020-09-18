@@ -12,6 +12,9 @@ public class DBC {
     /// MeterData表
     /// </summary>
     public class MeterData {
+
+        #region 字段
+
         /// <summary>
         /// 电表编号；台变编号
         /// </summary>
@@ -124,6 +127,8 @@ public class DBC {
         /// 运行状态字7（总表才有）
         /// </summary>
         public const string combined_phase_fault = "combined_phase_fault";
+
+        #endregion
 
     }
 

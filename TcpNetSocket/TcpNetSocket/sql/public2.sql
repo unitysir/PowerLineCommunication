@@ -1,18 +1,18 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 10.12.6.169
+ Source Server         : pgTest
  Source Server Type    : PostgreSQL
  Source Server Version : 120004
- Source Host           : 10.12.6.169:5432
- Source Catalog        : electricity
+ Source Host           : localhost:5432
+ Source Catalog        : postgres
  Source Schema         : public
 
  Target Server Type    : PostgreSQL
  Target Server Version : 120004
  File Encoding         : 65001
 
- Date: 17/09/2020 16:10:05
+ Date: 17/09/2020 21:24:06
 */
 
 
@@ -56,16 +56,16 @@ COMMENT ON COLUMN "public"."line_meters"."terminal_sn" IS '该线路总表终端
 DROP TABLE IF EXISTS "public"."meter_data";
 CREATE TABLE "public"."meter_data" (
   "meter_sn" varchar(40) COLLATE "pg_catalog"."default" NOT NULL DEFAULT NULL::character varying,
-  "save_time" timestamp(0),
+  "save_time" varchar COLLATE "pg_catalog"."default",
   "voltage_a" float4 NOT NULL,
   "voltage_b" float4,
   "voltage_c" float4,
-  "current_a" float4,
+  "current_a" float4 NOT NULL,
   "current_b" float4,
   "current_c" float4,
   "current_zero_line" float4,
   "current_remain" float4,
-  "active_power_a" float4,
+  "active_power_a" float4 NOT NULL,
   "active_power_b" float4,
   "active_power_c" float4,
   "active_power_total" float4,
@@ -78,7 +78,7 @@ CREATE TABLE "public"."meter_data" (
   "power_factor_c" float4,
   "temperature" int2,
   "humidity" int2,
-  "acquisition_time" timestamp(0),
+  "acquisition_time" varchar(20) COLLATE "pg_catalog"."default",
   "phase_fault_a" varchar(20) COLLATE "pg_catalog"."default" DEFAULT NULL::character varying,
   "phase_fault_b" varchar(20) COLLATE "pg_catalog"."default" DEFAULT NULL::character varying,
   "phase_fault_c" varchar(20) COLLATE "pg_catalog"."default" DEFAULT NULL::character varying,
@@ -131,6 +131,16 @@ COMMENT ON COLUMN "public"."power_line"."line" IS '供电线路说明，如“10
 COMMENT ON COLUMN "public"."power_line"."department" IS '供电单位，如“盘龙供电锁”';
 COMMENT ON COLUMN "public"."power_line"."sub_station_areas" IS '台区名称，“如长马沟村1#公变”';
 COMMENT ON COLUMN "public"."power_line"."user" IS '用户名';
+
+-- ----------------------------
+-- Table structure for tb_test
+-- ----------------------------
+DROP TABLE IF EXISTS "public"."tb_test";
+CREATE TABLE "public"."tb_test" (
+  "id" int4 NOT NULL,
+  "name" varchar(255) COLLATE "pg_catalog"."default" NOT NULL
+)
+;
 
 -- ----------------------------
 -- Table structure for terminal
@@ -207,6 +217,11 @@ ALTER TABLE "public"."meter_data" ADD CONSTRAINT "meter_data_pkey" PRIMARY KEY (
 -- Primary Key structure for table power_line
 -- ----------------------------
 ALTER TABLE "public"."power_line" ADD CONSTRAINT "powerline_pkey" PRIMARY KEY ("line_sn");
+
+-- ----------------------------
+-- Primary Key structure for table tb_test
+-- ----------------------------
+ALTER TABLE "public"."tb_test" ADD CONSTRAINT "tb_test_pkey" PRIMARY KEY ("id");
 
 -- ----------------------------
 -- Primary Key structure for table terminal

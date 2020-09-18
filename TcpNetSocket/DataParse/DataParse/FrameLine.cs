@@ -30,16 +30,21 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetVoltage(string data) {
+    public static List<string> GetVoltage(string data) {
 
         List<string> voltageLst = new List<string>();
 
-        string voltage = GetVoltageStr(data);
-        string[] volStrs = GetEqLenSubStr(voltage, 4);
+        try {
+            string voltage = GetVoltageStr(data);
+            string[] volStrs = GetEqLenSubStr(voltage, 4);
 
 
-        for (int i = 0; i < volStrs.Length; i++) {
-            voltageLst.Add(InsertStr(volStrs[i], ".", 3));
+            for (int i = 0; i < volStrs.Length; i++) {
+                voltageLst.Add(InsertStr(volStrs[i], ".", 3));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
 
 
@@ -52,12 +57,17 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetCurrent(string data) {
+    public static List<string> GetCurrent(string data) {
         List<string> currentLst = new List<string>();
-        string current = GetCurrentStr(data);
-        string[] curStrs = GetEqLenSubStr(current, 8);
-        for (int i = 0; i < curStrs.Length; i++) {
-            currentLst.Add(IsPosNeg(curStrs[i], "8", ".", 4));
+        try {
+            string current = GetCurrentStr(data);
+            string[] curStrs = GetEqLenSubStr(current, 8);
+            for (int i = 0; i < curStrs.Length; i++) {
+                currentLst.Add(IsPosNeg(curStrs[i], "8", ".", 4));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
         return currentLst;
     }
@@ -67,14 +77,20 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetActivePower(string data) {
+    public static List<string> GetActivePower(string data) {
 
         List<string> activePowerLst = new List<string>();
-        string activePowerStr = GetActivePowerStr(data);
-        string[] activePowers = GetEqLenSubStr(activePowerStr, 8);
 
-        for (int i = 0; i < activePowers.Length; i++) {
-            activePowerLst.Add(IsPosNeg(activePowers[i], "8", ".", 4));
+        try {
+            string activePowerStr = GetActivePowerStr(data);
+            string[] activePowers = GetEqLenSubStr(activePowerStr, 8);
+
+            for (int i = 0; i < activePowers.Length; i++) {
+                activePowerLst.Add(IsPosNeg(activePowers[i], "8", ".", 4));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
 
 
@@ -86,14 +102,19 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetReactivePower(string data) {
+    public static List<string> GetReactivePower(string data) {
 
         List<string> reactivePowerLst = new List<string>();
-        string reactivePowerStr = GetReactivePowerStr(data);
-        string[] reactivePowers = GetEqLenSubStr(reactivePowerStr, 8);
+        try {
+            string reactivePowerStr = GetReactivePowerStr(data);
+            string[] reactivePowers = GetEqLenSubStr(reactivePowerStr, 8);
 
-        for (int i = 0; i < reactivePowers.Length; i++) {
-            reactivePowerLst.Add(IsPosNeg(reactivePowers[i], "80", ".", 4));
+            for (int i = 0; i < reactivePowers.Length; i++) {
+                reactivePowerLst.Add(IsPosNeg(reactivePowers[i], "80", ".", 4));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
 
         return reactivePowerLst;
@@ -104,19 +125,24 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetPowerFactor(string data) {
+    public static List<string> GetPowerFactor(string data) {
         List<string> powerFactorLst = new List<string>();
-        string powerFactorStr = GetPowerFactorStr(data);
-        string[] powerFactors = GetEqLenSubStr(powerFactorStr, 4);
+        try {
+            string powerFactorStr = GetPowerFactorStr(data);
+            string[] powerFactors = GetEqLenSubStr(powerFactorStr, 4);
 
-        foreach (var item in powerFactors) {
-            string str = InsertStr(item, ".", 1);
-            string s;
-            if (IsCurSubEqIpt(str, "8", out s)) {
-                powerFactorLst.Add("-0" + s);
-            } else {
-                powerFactorLst.Add(s);
+            foreach (var item in powerFactors) {
+                string str = InsertStr(item, ".", 1);
+                string s;
+                if (IsCurSubEqIpt(str, "8", out s)) {
+                    powerFactorLst.Add("-0" + s);
+                } else {
+                    powerFactorLst.Add(s);
+                }
             }
+        } catch (System.Exception) {
+
+            throw;
         }
         return powerFactorLst;
     }
@@ -126,14 +152,20 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetTransTemp(string data) {
+    public static List<string> GetTransTemp(string data) {
 
         List<string> transTempsLst = new List<string>();
-        string transTempStr = GetTransTempStr(data);
-        string[] transTemps = GetEqLenSubStr(transTempStr, 4);
 
-        for (int i = 0; i < transTemps.Length; i++) {
-            transTempsLst.Add(IsPosNeg(transTemps[i], "8", "", 0));
+        try {
+            string transTempStr = GetTransTempStr(data);
+            string[] transTemps = GetEqLenSubStr(transTempStr, 4);
+
+            for (int i = 0; i < transTemps.Length; i++) {
+                transTempsLst.Add(IsPosNeg(transTemps[i], "8", "", 0));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
 
         return transTempsLst;
@@ -144,14 +176,19 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    public List<string> GetHumidity(string data) {
+    public static List<string> GetHumidity(string data) {
 
         List<string> humidityLst = new List<string>();
-        string humidityStr = GetHumidityStr(data);
-        string[] humiditys = GetEqLenSubStr(humidityStr, 4);
+        try {
+            string humidityStr = GetHumidityStr(data);
+            string[] humiditys = GetEqLenSubStr(humidityStr, 4);
 
-        for (int i = 0; i < humiditys.Length; i++) {
-            humidityLst.Add(IsPosNeg(humiditys[i], "8", "", 0));
+            for (int i = 0; i < humiditys.Length; i++) {
+                humidityLst.Add(IsPosNeg(humiditys[i], "8", "", 0));
+            }
+        } catch (System.Exception) {
+
+            throw;
         }
 
         return humidityLst;
@@ -166,7 +203,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetShowStr(string data) {
+    private static string GetShowStr(string data) {
         // 27 正向字符串的长度，-25 反向字符串长度
         return data.Trim().Substring(27).Substring(0, data.Length - 27 - 24).Replace(" ", "");
     }
@@ -178,7 +215,7 @@ public class FrameLine : DataParseBase {
     /// <param name="startIndex">开始位置</param>
     /// <param name="count">截取长度</param>
     /// <returns></returns>
-    private string GetSubPartStr(string data, int startIndex, int count) {
+    private static string GetSubPartStr(string data, int startIndex, int count) {
         return GetShowStr(data).Substring(startIndex, count);
     }
 
@@ -187,7 +224,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetVoltageStr(string data) {
+    private static string GetVoltageStr(string data) {
         return GetSubPartStr(data, 0, 12);
     }
 
@@ -196,7 +233,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetCurrentStr(string data) {
+    private static string GetCurrentStr(string data) {
         return GetSubPartStr(data, 12, 40);
     }
 
@@ -205,7 +242,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetActivePowerStr(string data) {
+    private static string GetActivePowerStr(string data) {
         return GetSubPartStr(data, 52, 32);
     }
 
@@ -214,7 +251,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetReactivePowerStr(string data) {
+    private static string GetReactivePowerStr(string data) {
 
         return GetSubPartStr(data, 84, 32);
     }
@@ -224,7 +261,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetPowerFactorStr(string data) {
+    private static string GetPowerFactorStr(string data) {
 
         return GetSubPartStr(data, 116, 12);
     }
@@ -234,7 +271,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetTransTempStr(string data) {
+    private static string GetTransTempStr(string data) {
 
         return GetSubPartStr(data, 128, 4);
     }
@@ -244,7 +281,7 @@ public class FrameLine : DataParseBase {
     /// </summary>
     /// <param name="data"></param>
     /// <returns></returns>
-    private string GetHumidityStr(string data) {
+    private static string GetHumidityStr(string data) {
 
         return GetSubPartStr(data, 132, 4);
     }

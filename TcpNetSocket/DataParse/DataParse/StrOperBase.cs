@@ -34,7 +34,7 @@ public class StrOperBase{
     /// <param name="insertStr"></param>
     /// <param name="index"></param>
     /// <returns></returns>
-    public string InsertStr(string str, string insertStr, int index) {
+    public static string InsertStr(string str, string insertStr, int index) {
         return str.Insert(index, insertStr);
     }
 
@@ -44,19 +44,25 @@ public class StrOperBase{
     /// <param name="str"></param>
     /// <param name="len">截取长度</param>
     /// <returns></returns>
-    public string[] GetEqLenSubStr(string str, int len) {
+    public static string[] GetEqLenSubStr(string str, int len) {
 
         List<string> eqLenLst = new List<string>();
-        string addStr = "";
-        char[] chars = str.ToCharArray();
-        int charLen = chars.Length;
 
-        for (int i = 1; i < charLen + 1; i++) {
-            addStr += chars[i - 1];
-            if (i % len == 0) {
-                eqLenLst.Add(addStr);
-                addStr = "";
+        try {
+            string addStr = "";
+            char[] chars = str.ToCharArray();
+            int charLen = chars.Length;
+
+            for (int i = 1; i < charLen + 1; i++) {
+                addStr += chars[i - 1];
+                if (i % len == 0) {
+                    eqLenLst.Add(addStr);
+                    addStr = "";
+                }
             }
+        } catch (Exception) {
+
+            throw;
         }
 
         return eqLenLst.ToArray();
@@ -69,7 +75,7 @@ public class StrOperBase{
     /// <param name="startstr">开始</param>
     /// <param name="endstr">结束</param>
     /// <returns></returns>
-    public string GetMidStrEx(string sourse, string startstr, string endstr) {
+    public static string GetMidStrEx(string sourse, string startstr, string endstr) {
         string result = string.Empty;
         int startindex, endindex;
         try {
@@ -92,7 +98,7 @@ public class StrOperBase{
     /// </summary>
     /// <param name="hex"></param>
     /// <returns></returns>
-    public string HexToDec(string hex) {
+    public static string HexToDec(string hex) {
         return int.Parse(hex, NumberStyles.HexNumber).ToString();
     }
 
@@ -102,15 +108,21 @@ public class StrOperBase{
     /// <param name="cur"></param>
     /// <param name="ipt"></param>
     /// <returns></returns>
-    public bool IsCurSubEqIpt(string cur, string ipt) {
+    public static bool IsCurSubEqIpt(string cur, string ipt) {
         if (ipt.Length > cur.Length) return false;
 
-        string str = cur;
-        str = str.Substring(0, ipt.Length);
+        try {
+            string str = cur;
+            str = str.Substring(0, ipt.Length);
 
-        if (str.Equals(ipt)) {
-            return true;
+            if (str.Equals(ipt)) {
+                return true;
+            }
+        } catch (Exception) {
+
+            throw;
         }
+
         return false;
     }
 
@@ -121,19 +133,25 @@ public class StrOperBase{
     /// <param name="ipt"></param>
     /// <param name="s">返回已经截取的字符串</param>
     /// <returns></returns>
-    public bool IsCurSubEqIpt(string cur, string ipt,out string s) {
+    public static bool IsCurSubEqIpt(string cur, string ipt,out string s) {
         if (ipt.Length > cur.Length) {
             s = cur;
             return false;
         }
 
-        string str = cur;
-        str = str.Substring(0, ipt.Length);
+        try {
+            string str = cur;
+            str = str.Substring(0, ipt.Length);
 
-        if (str.Equals(ipt)) {
-            s = cur.Substring(ipt.Length);
-            return true;
+            if (str.Equals(ipt)) {
+                s = cur.Substring(ipt.Length);
+                return true;
+            }
+        } catch (Exception) {
+
+            throw;
         }
+
         s = cur;
         return false;
     }
@@ -144,17 +162,22 @@ public class StrOperBase{
     /// <param name="data"></param>
     /// <param name="len"></param>
     /// <returns></returns>
-    public string SubHighZero(string data) {
+    public static string SubHighZero(string data) {
         if (!data.Remove(1).Equals("0")) return data;
         string str = data.Remove(0, 1);
 
-        for (int i = 0; i < str.Length; i++) {
-            string s = str.Substring(0, 1);
-            if (s.Equals("0")) {
-                str = str.Remove(0, 1);
-            } else {
-                break;
+        try {
+            for (int i = 0; i < str.Length; i++) {
+                string s = str.Substring(0, 1);
+                if (s.Equals("0")) {
+                    str = str.Remove(0, 1);
+                } else {
+                    break;
+                }
             }
+        } catch (Exception) {
+
+            throw;
         }
 
         return str;
@@ -164,7 +187,7 @@ public class StrOperBase{
     /// 获取当前时间
     /// </summary>
     /// <returns></returns>
-    public string GetCurTime() {
+    public static string GetCurTime() {
         return DateTime.Now.ToString("yyyy-MM-dd__HH_mm_ss");
     }
 

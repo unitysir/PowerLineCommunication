@@ -6,3 +6,12 @@ D:\zj_Programs\C#file\Console\00Core\TcpNetSocket\DataParse\obj\Debug\netcoreapp
 D:\zj_Programs\C#file\Console\00Core\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.csproj.CoreCompileInputs.cache
 D:\zj_Programs\C#file\Console\00Core\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.dll
 D:\zj_Programs\C#file\Console\00Core\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.pdb
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\bin\Debug\netcoreapp3.1\DataParse.deps.json
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\bin\Debug\netcoreapp3.1\DataParse.dll
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\bin\Debug\netcoreapp3.1\DataParse.pdb
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.csprojAssemblyReference.cache
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.AssemblyInfoInputs.cache
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.AssemblyInfo.cs
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.csproj.CoreCompileInputs.cache
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.dll
+D:\zj_Programs\C#file\Console\00Core\PowerLineCommunication\TcpNetSocket\DataParse\obj\Debug\netcoreapp3.1\DataParse.pdb

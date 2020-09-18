@@ -1,8 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Threading;
 
 public class SocketData {
+
+    private static string conStr = "Host=localhost;Port=5432;Username=postgres;Password=admin;Database=postgres";
+    private static string lockInsert = "insert";
+    private static int id = 1;
 
     /// <summary>
     /// 接受消息
@@ -28,23 +33,21 @@ public class SocketData {
         sendMsgAc = msg;
     }
 
-    public static void Start(string ip,int port) {
-        PgDBHelper.Instance.DBOpen();
-        PgDBHelper.Instance.DBInsert();
+    public static void Start(string ip, int port) {
 
-        //StrOperBase strOperBase = new StrOperBase();
+        PgDBHelper.Instance.DBOpen(conStr);
 
-        //FrameLine frameLine = strOperBase as FrameLine;
-
-
-        SocketClient client = new SocketClient(ip,port);//127.0.0.1 192.168.137.1 10.13.19.81
+        SocketClient client = new SocketClient(ip, port);//127.0.0.1 192.168.137.1 10.13.19.81
 
         //绑定当收到服务器发送的消息后的处理事件
         client.HandleRecMsg = new Action<byte[], SocketClient>((bytes, theClient) => {
 
             recvMsgAc?.Invoke(bytes);//接受的消息
 
-            //string recvMsg = Encoding.UTF8.GetString(bytes);
+            string recvMsg = Encoding.UTF8.GetString(bytes);
+            Console.WriteLine($"{id++},{recvMsg}");
+
+            #region data
 
             //Console.WriteLine("电压：");
             //foreach (var item in frameLine.GetVoltage(recvMsg)) {
@@ -86,16 +89,28 @@ public class SocketData {
             //    Console.WriteLine(item);
             //}
 
+            #endregion
+
         });
 
         //绑定向服务器发送消息后的处理事件
         client.HandleSendMsg = new Action<byte[], SocketClient>((bytes, theClient) => {
             sendMsgAc?.Invoke(bytes);//发送的消息
-            string msg = Encoding.UTF8.GetString(bytes);
+            //string msg = Encoding.UTF8.GetString(bytes);
         });
 
         //开始运行客户端
         client.StartClient();
+
+        // 数据库操作
+        ThreadPool.QueueUserWorkItem((e) => {
+            while (true) {
+                lock (lockInsert) {
+                    TBMeterData.Instance.Insert();
+                }
+            }
+        }, "");
+
 
         while (true) {
             Console.WriteLine("输入:quit关闭客户端，输入其它消息发送到服务器");
